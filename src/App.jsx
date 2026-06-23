@@ -1,16 +1,15 @@
-function App(){
+import { Routes, Route } from "react-router-dom";
 
-  return(
+import Home from "./pages/Home";
+import About from "./pages/About";
 
-    <div>
-
-      <h1>My First React Header!</h1>
-
-    </div>
-
-
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+    </Routes>
   );
-
 }
 
 export default App;
