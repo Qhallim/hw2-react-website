@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { cartCount } = useCart();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -10,13 +12,13 @@ function Navbar() {
 
   return (
     <nav>
-      <a href="/">
+      <Link to="/">
         <img
           src="assets/img/logoTransparent.png"
           className="logo"
           alt="logo"
         />
-      </a>
+      </Link>
 
       <ul className={`nav-list ${menuOpen ? "active" : ""}`}>
         <li><Link to="/">Home</Link></li>
@@ -32,11 +34,9 @@ function Navbar() {
 
         <Link to="/cart" id="cart-btn">
           <img src="assets/img/shopping-cart.webp" alt="cart" />
-          <span id="cart-count">0</span>
+          <span id="cart-count">{cartCount}</span>
         </Link>
       </div>
-
-      <div id="toast"></div>
     </nav>
   );
 }

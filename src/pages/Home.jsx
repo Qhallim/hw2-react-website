@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Slider from "../components/Slider";
 
 function Home() {
     return (
@@ -20,6 +21,8 @@ function Home() {
                     prepared with love and care.
                 </p>
             </section>
+
+            <Slider />
 
             <Footer />
 
