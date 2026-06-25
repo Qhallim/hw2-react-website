@@ -2,7 +2,6 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useCart } from "../context/CartContext";
 
-
 const menuItems = [
     { name: "Chicken Over Rice", price: 12.99, img: "assets/img/chicken-over-rice.jpg" },
     { name: "Lamb Over Rice", price: 12.99, img: "assets/img/lamb-over-rice.jpg" },
@@ -17,42 +16,56 @@ const menuItems = [
 ];
 
 function Menu() {
-
     const { addToCart, showToast } = useCart();
 
     return (
         <>
             <Navbar />
 
-            <section className="menu-grid">
-                {menuItems.map((item, index) => (
-                    <div className="menu-item" key={index}>
+            <section className="container py-5">
 
-                        {/* IMAGE */}
-                        <img src={item.img} alt={item.name} />
+                <div className="row g-4">
+                    {menuItems.map((item, index) => (
+                        <div className="col-12 col-sm-6 col-lg-3" key={index}>
 
-                        {/* TEXT */}
-                        <h3>{item.name}</h3>
-                        <p>${item.price.toFixed(2)}</p>
+                            <div className="card h-100 bg-dark text-white border-0 shadow">
 
-                        <button
-                            onClick={() => {
-                                addToCart(item.name, item.price, item.img);
-                                showToast(`${item.name} added to cart!`);
-                            }}
-                        >
-                            Add to Cart
-                        </button>
+                                <img
+                                    src={item.img}
+                                    className="card-img-top"
+                                    alt={item.name}
+                                    style={{ height: "180px", objectFit: "cover" }}
+                                />
 
-                    </div>
-                ))}
+                                <div className="card-body text-center d-flex flex-column">
+
+                                    <h5 className="card-title">{item.name}</h5>
+
+                                    <p className="mb-3">
+                                        ${item.price.toFixed(2)}
+                                    </p>
+
+                                    <button
+                                        className="btn btn-red mt-auto"
+                                        onClick={() => {
+                                            addToCart(item.name, item.price, item.img);
+                                            showToast(`${item.name} added to cart!`);
+                                        }}
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    ))}
+                </div>
             </section>
 
             <Footer />
-
         </>
     );
 }
 
 export default Menu;
-

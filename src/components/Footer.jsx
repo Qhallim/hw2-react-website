@@ -5,63 +5,70 @@ import youtube from "/assets/img/youtube-logo.svg";
 
 function Footer() {
     return (
-        <footer>
-            <div className="footer-content">
+        <footer className="bg-dark text-white py-4 mt-5">
 
-                {/* left */}
-                <div className="footer-left">
-                    <h4>Halal Crate</h4>
-                    <p>123 Liberty Avenue, Queens, NY 12345</p>
-                    <p>(123)-456-7890</p>
+            <div className="container">
+                <div className="row align-items-start text-center text-md-start">
+
+                    {/* left */}
+                    <div className="col-12 col-md-4 text-center">
+                        <h5>Halal Crate</h5>
+                        <p className="mb-1">123 Liberty Avenue, Queens, NY 12345</p>
+                        <p>(123)-456-7890</p>
+                    </div>
+
+                    {/* middle */}
+                    <div className="col-12 col-md-4 text-center">
+                        <h5>Hours</h5>
+                        <p className="mb-1">Weekdays: 10:00am - 11:30pm</p>
+                        <p>Weekends: 9:30am - 11:45pm</p>
+                    </div>
+
+                    {/* right */}
+                    <div className="col-12 col-md-4 text-center">
+                        <h5>More of Us!</h5>
+
+                        <ul className="list-unstyled">
+                            <li>
+                                <a href="https://www.instagram.com/" target="_blank" className="text-white text-decoration-none">
+                                    <img src={instagram} alt="Instagram" width="24" height="24" className="px-1"/>
+                                    Instagram
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.twitter.com/" target="_blank" className="text-white text-decoration-none">
+                                    <img src={twitter} alt="Twitter" width="24" height="24" className="px-1" />
+                                    Twitter
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.facebook.com/" target="_blank" className="text-white text-decoration-none">
+                                    <img src={facebook} alt="Facebook" width="24" height="24" className="px-1" />
+                                    Facebook
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.youtube.com/" target="_blank" className="text-white text-decoration-none">
+                                    <img src={youtube} alt="YouTube" width="24" height="24" className="px-1" />
+                                    YouTube
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+
                 </div>
 
-                {/* Mid */}
-                <div className="footer-middle">
-                    <h4>Hours</h4>
-                    <p>Weekdays: 10:00am - 11:30pm</p>
-                    <p>Weekends: 9:30am - 11:45pm</p>
-                </div>
+                <hr className="border-light" />
 
-                {/* right */}
-                <div className="footer-right">
-                    <h4>More of Us!</h4>
-
-                    <ul className="social-media-links">
-                        <li>
-                            <a href="https://www.instagram.com/" target="_blank">
-                                <img src={instagram} alt="Instagram" />
-                                Instagram
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://www.twitter.com/" target="_blank">
-                                <img src={twitter} alt="Twitter" />
-                                Twitter
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://www.facebook.com/" target="_blank">
-                                <img src={facebook} alt="Facebook" />
-                                Facebook
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://www.youtube.com/" target="_blank">
-                                <img src={youtube} alt="YouTube" />
-                                YouTube
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
+                <p className="text-center mb-0">
+                    © 2026 Halal Crate
+                </p>
             </div>
 
-            <p className="copyright">
-                &copy; 2026 Halal Crate. All Rights Reserved.
-            </p>
         </footer>
     );
 }
