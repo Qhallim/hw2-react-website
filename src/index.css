@@ -1,19 +1,24 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("/assets/img/background.png");
+  /* background-image: url("/assets/img/background-old.png"); */
+  background: linear-gradient(90deg, #8b0000 0%, #191717 100%);
 
 
 }
 
 nav {
   display: flex;
-   background: linear-gradient(45deg, #8b0000,#323030);
+  background: linear-gradient(15deg, #8b0000, rgb(34, 17, 17));
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  position: relative; /* IMPORTANT */
+  /* Sticky */
+  position: sticky;
+  top: 0;
   z-index: 1000;
+
+
 }
 
 .nav-right {
@@ -24,7 +29,7 @@ nav {
 
 .logo {
 
-  height: 90px;
+  height: 60px;
   width: auto;
 }
 
@@ -51,16 +56,17 @@ nav {
 
 #cart-btn img {
 
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   object-fit: contain;
+  padding-top: 15px;
 
 }
 
 #cart-count {
 
   position: absolute;
-  top: -8px;
+  top: 7px;
   right: -8px;
   background: red;
   color: white;
@@ -273,17 +279,16 @@ footer {
   display: flex;
   gap: 40px;
   max-width: 1000px;
-  margin: 0px;
+  margin: 0 auto;
   padding: 20px;
   color: white;
   align-items: flex-start;
-
+  
 }
 
 .contact-left {
 
   flex: 1;
-  padding-left: 190px;
 
 }
 
@@ -352,27 +357,27 @@ footer {
 /* Cart Styles */
 
 .cart-item {
-    display: flex;
-    gap: 20px;
-    align-items: center;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 
-    background: rgba(0,0,0,0.6);
-    border-radius: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
 
-    padding: 15px;
-    margin-bottom: 15px;
+  padding: 15px;
+  margin-bottom: 15px;
 }
 
 .cart-item-image {
-    width: 120px;
-    height: 120px;
+  width: 120px;
+  height: 120px;
 
-    object-fit: cover;
-    border-radius: 10px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .cart-item-info {
-    flex: 1;
+  flex: 1;
 }
 
 
@@ -597,7 +602,7 @@ footer {
   top: 50%;
   transform: translateY(-50%);
 
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   color: white;
 
   border: none;
@@ -609,7 +614,7 @@ footer {
 }
 
 .slider-btn:hover {
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .prev {
@@ -659,7 +664,8 @@ footer {
     display: none;
     padding: 15px 0;
 
-    z-index: 999; /* IMPORTANT */
+    z-index: 999;
+    /* IMPORTANT */
   }
 
   .nav-list.active {
@@ -673,7 +679,24 @@ footer {
 
   .hamburger {
     display: block;
-    font-size: 40px; /* bigger icon */
-    z-index: 1001;   /* ABOVE menu */
+    font-size: 40px;
+    /* bigger icon */
+    z-index: 1001;
+
+  }
+
+
+  .contact-box {
+    flex-direction: column;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+    padding: 0;
+  }
+
+  .contact-right form {
+    width: auto;
   }
 }
